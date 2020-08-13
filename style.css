@@ -1,0 +1,47 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+.container {
+    display: flex;
+    width: 80%;
+    height: 80% ;
+    margin: 0 auto;
+    justify-content: space-between;
+    border-bottom: 30px solid brown;
+}
+
+.block {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 20px;
+    position: relative;
+}
+
+.block::after{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 70%;
+    background-color: brown;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+
+.hanoi-element {
+    height: 40px;
+    border-radius: 20px;
+    z-index: 23;
+}
