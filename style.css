@@ -199,3 +199,9 @@ cursor: pointer;
         text-align: center;
     }
 }
+
+@media (min-width: 901px){
+    .overlay {
+        display: none;
+    }
+}
