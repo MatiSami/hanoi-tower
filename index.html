@@ -4,56 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet"> 
+    <title>Hanoi Tower</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="game">
-    <section class="header">
-        <div>
-               <div class="moves">Liczb ruchów: <span id="moves-count"> 0</span></div>
-               <div class="min-moves">Minimalna liczba ruchów: <span id="min-moves-count"> 0</span></div>
-        </div>
-     
-        <div class="user-choice"> 
-            <div class="user-choice-title">Wybierz ilość elementów do ułożenia:</div>  
-            <ul>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-        </ul> 
-        </div>
-       
-        <div  class="game-time">Czas gry: <span id="timer">0:00</span>  </div>
-    </section>
-
-    <div class="container">
-        <div id="block-left" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
-        <div id="block-middle" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
-        <div id="block-right" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
-    </div>
-
-    <div class="winner-box">
-        <div class="winner-message">
-            <div class="winner-message-title">Gratulacje!!!</div>
-            <div class="winner-message-text">
-                Udało Ci się ułożyć wieżę hanoi w <span id="total-moves" class="total-moves"> 0 </span> ruchach. <br /> 
-                <span id="additional-text"></span> <br/>
-                Twój czas to <span
-                    id="total-time" class="total-time">0:00</span>
+    <div id="game-container" class="game supreme">
+        <section class="header">
+            <div>
+                <div class="moves">Liczb ruchów: <span id="moves-count"> 0</span></div>
+                <div class="min-moves">Minimalna liczba ruchów: <span id="min-moves-count"> 0</span></div>
             </div>
-            <button id="new-game" class="new-game-button"> Nowa Gra</button>
+
+            <div class="user-choice">
+                <div class="user-choice-title">Wybierz ilość elementów do ułożenia:</div>
+                <ul>
+                    <li class="user-choice-number">3</li>
+                    <li class="user-choice-number">4</li>
+                    <li class="user-choice-number">5</li>
+                    <li class="user-choice-number">6</li>
+                    <li class="user-choice-number">7</li>
+                    <li class="user-choice-number">8</li>
+                    <li class="user-choice-number">9</li>
+                    <li class="user-choice-number">10</li>
+                </ul>
+            </div>
+
+            <div class="game-time">Czas gry: <span id="timer">0:00</span> </div>
+        </section>
+
+        <div class="container">
+            <div id="block-left" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
+            <div id="block-middle" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
+            <div id="block-right" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
         </div>
-        
+
+        <div class="winner-box">
+            <div class="winner-message">
+                <div class="winner-message-title">Gratulacje!!!</div>
+                <div class="winner-message-text">
+                    Udało Ci się ułożyć wieżę hanoi w <span id="total-moves" class="total-moves"> 0 </span> ruchach.
+                    <br />
+                    <span id="additional-text"></span> <br />
+                    Twój czas to <span id="total-time" class="total-time">0:00</span>
+                </div>
+                <button id="new-game" class="new-game-button"> Nowa Gra</button>
+            </div>
+
+        </div>
+        <div id="instruction" class="instruction">
+            <div>Zasady</div>
+            <div class="instruction-bg">
+                <div class="instruction-bg-text">Zasady</div>    
+            </div>    
+        </div>
     </div>
-</div>
 
     <div class="overlay">
         <div class="mobile-message">
@@ -62,6 +68,26 @@
                 Gra nie jest przeznaczona na wersje mobilne
             </div>
         </div>
+    </div>
+
+    <div id="game-rules" class="game-rules">
+        <div class="game-rules-title">Zasady</div>
+        <div class="game-rules-text">
+            Gra składa się z trzech palików na których umieszczone zostają krążki wyglądem przypominające wieże. Krążki
+            są różnej średnicy i początkowo są ustawione na paliku od największego do najmniejszego na wierzchu. Zadanie
+            polega na przeniesieniu n krążków z pierwszego palika na drugi. Podczas rozwiązywania zadań należy pamiętać,
+            że:
+        </div>
+        <ol class="game-rules-list">
+            <li class="game-rules-list__element">można przekładać tylko jeden krążek naraz</li>
+            <li class="game-rules-list__element">przekładany krążek można zdjąć tylko z wierzchu palika i położyć na wierzchu drugiego palika</li>
+            <li class="game-rules-list__element">nie wolno kłaść większego krążka na mniejszy</li>
+        </ol>
+        <div class="game-rules-ending">
+            Spróbuj zmierzyć się z ułożeniem Wieży Hanoi.
+        </div>
+
+        <button id="game-rules-button" class="game-rules-button">Zrozumiałem</button>
     </div>
 
     <script src="app.js"></script>

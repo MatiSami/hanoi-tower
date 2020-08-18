@@ -8,26 +8,27 @@ const totalMoves = document.getElementById("total-moves")
 const totalTime = document.getElementById("total-time")
 const winnerBox = document.querySelector(".winner-box")
 const extraText = document.getElementById("additional-text")
-const howManyElements = document.querySelectorAll("li")
+const howManyElements = document.getElementsByClassName("user-choice-number")
 const newGameButton = document.getElementById("new-game")
 const minMovesNeed = document.getElementById("min-moves-count")
+const gameRules = document.getElementById("game-rules")
+const gameRulesButton = document.getElementById("game-rules-button")
+const gameInstruction = document.getElementById("instruction")
+const gameContainer = document.getElementById("game-container")
+
 let time;
-
-
 let hanoiElements = 3;
 let moves = 0
 let timerIsOff = true
-
 let minutes = 0
 let seconds = 0
 let houres = 0
-
 let totalMovesNeeds = Math.pow(2, hanoiElements) - 1;
+let gameRulesOn = true
 
 Array.from(howManyElements).forEach(function (element) {
     element.addEventListener("click", function () {
         hanoiElements = element.textContent
-        
         newGame()
     })
 })
@@ -110,9 +111,11 @@ function generateHanoiElements() {
 
 function setDraggable(element) {
     Array.from(blocks).forEach(function (element) {
+        console.log(element.childNodes);
         let children = element.children
         if (element.childNodes.length > 0) {
             Array.from(children).forEach((element => {
+                // console.log(element);
                 element.setAttribute("draggable", false)
                 element.style.cursor = "not-allowed";
             }))
@@ -201,5 +204,15 @@ newGameButton.addEventListener("click", function () {
     movesCounter.innerHTML = moves
     newGame()
     winnerBox.style.display = "none"
+})
+
+gameRulesButton.addEventListener("click", function(){
+        gameContainer.classList.remove("supreme")
+        gameRules.style.display = "none"
+})
+
+gameInstruction.addEventListener("click", function(){
+        gameRules.style.display = "flex";
+        gameContainer.classList.add("supreme")
 })
 
