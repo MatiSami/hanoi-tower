@@ -16,6 +16,9 @@ const gameRulesButton = document.getElementById("game-rules-button")
 const gameInstruction = document.getElementById("instruction")
 const gameContainer = document.getElementById("game-container")
 const newGameBox = document.getElementById("new-game-box")
+const leftButton = document.getElementById("left-button")
+const rightButton = document.getElementById("right-button")
+const userChoice = document.getElementById("user-choice")
 
 let time;
 let hanoiElements = 3;
@@ -140,6 +143,9 @@ function endGame() {
     winnerBox.style.display = "block"
     totalMoves.innerHTML = moves
     totalTime.innerHTML = time
+    leftButton.style.display = "none"
+        rightButton.style.display = "none"
+        userChoice.style.display = "none"
     // }
 }
 
@@ -198,6 +204,7 @@ function newGame() {
     totalMovesNeeds = Math.pow(2, hanoiElements) - 1;
     minMovesNeed.innerHTML = totalMovesNeeds
     console.log(totalMovesNeeds);
+    userChoice.style.display = "flex"
 }
 
 newGameButton.addEventListener("click", function () {
@@ -205,16 +212,24 @@ newGameButton.addEventListener("click", function () {
     movesCounter.innerHTML = moves
     newGame()
     winnerBox.style.display = "none"
+    leftButton.style.display = "block"
+    rightButton.style.display = "block"
 })
 
 gameRulesButton.addEventListener("click", function(){
         gameContainer.classList.remove("supreme")
         gameRules.style.display = "none"
+        leftButton.style.display = "block"
+        rightButton.style.display = "block"
+        timer()
 })
 
 gameInstruction.addEventListener("click", function(){
         gameRules.style.display = "flex";
         gameContainer.classList.add("supreme")
+        leftButton.style.display = "none"
+        rightButton.style.display = "none"
+    clearInterval(timerPlay)
 })
 
 newGameBox.addEventListener("click", function(){
