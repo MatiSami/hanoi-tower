@@ -5,17 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-   
+    <section class="header">
+        <div>
+               <div class="moves">Liczb ruchów: <span id="moves-count"> 0</span></div>
+               <div class="min-moves">Minimalna liczba ruchów: <span id="min-moves-count"> 0</span></div>
+        </div>
+     
+        <div class="user-choice"> 
+            <div class="user-choice-title">Wybierz ilość elementów do ułożenia:</div>  
+            <ul>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul> 
+        </div>
+       
+        <div  class="game-time">Czas gry: <span id="timer">0:00</span>  </div>
+    </section>
+
     <div class="container">
         <div id="block-left" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
         <div id="block-middle" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
         <div id="block-right" class="block" ondrop="drop_handler(event)" ondragover="dragover_handler(event)"></div>
     </div>
 
+    <div class="winner-box">
+        <div class="winner-message">
+            <div class="winner-message-title">Gratulacje!!!</div>
+            <div class="winner-message-text">
+                Udało Ci się ułożyć wieżę hanoi w <span id="total-moves" class="total-moves"> 0 </span> ruchach. <br /> 
+                <span id="additional-text"></span> <br/>
+                Twój czas to <span
+                    id="total-time" class="total-time">0:00</span>
+            </div>
+            <button id="new-game" class="new-game-button"> Nowa Gra</button>
+        </div>
+        
+    </div>
+
+    <div class="overlay">
+        <div class="mobile-message">
+            <div class="mobile-message-title">Uwaga</div>
+            <div class="mobile-message-text">
+                Gra nie jest przeznaczona na wersje mobilne
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
