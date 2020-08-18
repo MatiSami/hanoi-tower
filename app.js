@@ -15,6 +15,7 @@ const gameRules = document.getElementById("game-rules")
 const gameRulesButton = document.getElementById("game-rules-button")
 const gameInstruction = document.getElementById("instruction")
 const gameContainer = document.getElementById("game-container")
+const newGameBox = document.getElementById("new-game-box")
 
 let time;
 let hanoiElements = 3;
@@ -214,5 +215,9 @@ gameRulesButton.addEventListener("click", function(){
 gameInstruction.addEventListener("click", function(){
         gameRules.style.display = "flex";
         gameContainer.classList.add("supreme")
+})
+
+newGameBox.addEventListener("click", function(){
+    newGame()
 })
 
