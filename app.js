@@ -24,12 +24,15 @@ let time;
 let hanoiElements = 3;
 let moves = 0
 let timerIsOff = true
-let minutes 
-let seconds
+let minutes = 0
+let seconds = 0
 let houres = 0
 let totalMovesNeeds = Math.pow(2, hanoiElements) - 1;
 let gameRulesOn = true
 
+let scoreBoard = []
+
+// wybór liczby elementów do ułożenia 
 Array.from(howManyElements).forEach(function (element) {
     element.addEventListener("click", function () {
         hanoiElements = element.textContent
@@ -37,7 +40,9 @@ Array.from(howManyElements).forEach(function (element) {
     })
 })
 
+
 generateHanoiElements()
+
 window.addEventListener('DOMContentLoaded', () => {
     minMovesNeed.innerHTML = totalMovesNeeds
     setDraggable(blockLeft)
@@ -119,7 +124,6 @@ function setDraggable(element) {
         let children = element.children
         if (element.childNodes.length > 0) {
             Array.from(children).forEach((element => {
-                // console.log(element);
                 element.setAttribute("draggable", false)
                 element.style.cursor = "not-allowed";
             }))
@@ -158,8 +162,6 @@ function countMoves() {
 function timer() {
     timerIsOff = false
     if (!timerIsOff) {
-        seconds = 0
-        minutes = 0
         timerPlay = setInterval(function () {
             seconds++
             if (seconds < 10) {
@@ -186,6 +188,7 @@ function refresh() {
 }
 
 function newGame() {
+
     Array.from(blocks).forEach(function (element) {
         while (element.firstChild) {
             element.firstChild.remove()
@@ -239,3 +242,5 @@ newGameBox.addEventListener("click", function () {
     newGame()
 })
 
+
+alert
