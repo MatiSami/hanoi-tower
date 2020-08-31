@@ -7,22 +7,24 @@ body {
     overflow: hidden;
     position: relative;
 }
+
 .left-button {
     display: none;
     position: absolute;
     bottom: 0;
     left: 0;
 }
+
 .right-button {
     display: none;
     position: absolute;
     bottom: 0;
     right: 0;
 }
+
 .supreme {
     -webkit-filter: blur(5px) grayscale(100%);
 }
-
 
 .container {
     display: flex;
@@ -34,7 +36,7 @@ body {
     border-radius: 5px;
 }
 
-.game{
+.game {
     height: 60%;
     margin-bottom: 100px;
 }
@@ -194,7 +196,7 @@ ul {
 .new-game-button:hover, .game-rules-button:hover {
     font-weight: bold;
     letter-spacing: 2px;
-} 
+}
 
 .new-game-button:hover {
     font-weight: bold;
@@ -286,9 +288,9 @@ ul {
     height: 200px;
     background-color: rgb(112, 162, 177);
     color: #fff;
-    -webkit-box-shadow: -2px -22px 85px 3px rgba(255,255,255,1);
-    -moz-box-shadow: -2px -22px 85px 3px rgba(255,255,255,1);
-    box-shadow: -2px -22px 85px 3px rgba(255,255,255,1);
+    -webkit-box-shadow: -2px -22px 85px 3px rgba(255, 255, 255, 1);
+    -moz-box-shadow: -2px -22px 85px 3px rgba(255, 255, 255, 1);
+    box-shadow: -2px -22px 85px 3px rgba(255, 255, 255, 1);
 }
 
 .instruction:hover {
@@ -299,7 +301,6 @@ ul {
     position: relative;
     width: 200px;
     height: 100px;
-
     float: left;
     font-size: 0.9em;
     text-transform: uppercase;
@@ -332,14 +333,14 @@ ul {
     padding-bottom: 30px;
 }
 
-.new-game-box:hover> .new-game-bg {
+.new-game-box:hover>.new-game-bg {
     width: 200px;
     height: 200px;
     background-color: rgb(112, 162, 177);
     color: #fff;
-    -webkit-box-shadow: -2px -22px 85px 3px rgba(255,255,255,1);
-    -moz-box-shadow: -2px -22px 85px 3px rgba(255,255,255,1);
-    box-shadow: -2px -22px 85px 3px rgba(255,255,255,1);
+    -webkit-box-shadow: -2px -22px 85px 3px rgba(255, 255, 255, 1);
+    -moz-box-shadow: -2px -22px 85px 3px rgba(255, 255, 255, 1);
+    box-shadow: -2px -22px 85px 3px rgba(255, 255, 255, 1);
 }
 
 .new-game-box:hover {
@@ -347,6 +348,7 @@ ul {
 }
 
 @media (max-width: 900px) {
+    
     .game {
         display: none
     }

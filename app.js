@@ -24,8 +24,8 @@ let time;
 let hanoiElements = 3;
 let moves = 0
 let timerIsOff = true
-let minutes = 0
-let seconds = 0
+let minutes 
+let seconds
 let houres = 0
 let totalMovesNeeds = Math.pow(2, hanoiElements) - 1;
 let gameRulesOn = true
@@ -144,8 +144,8 @@ function endGame() {
     totalMoves.innerHTML = moves
     totalTime.innerHTML = time
     leftButton.style.display = "none"
-        rightButton.style.display = "none"
-        userChoice.style.display = "none"
+    rightButton.style.display = "none"
+    userChoice.style.display = "none"
     // }
 }
 
@@ -158,6 +158,8 @@ function countMoves() {
 function timer() {
     timerIsOff = false
     if (!timerIsOff) {
+        seconds = 0
+        minutes = 0
         timerPlay = setInterval(function () {
             seconds++
             if (seconds < 10) {
@@ -179,7 +181,7 @@ function timer() {
 }
 
 function refresh() {
-    time = minutes + ":" + seconds;
+    time = minutes + ":" +  seconds;
     document.getElementById("timer").innerHTML = time;
 }
 
@@ -216,23 +218,24 @@ newGameButton.addEventListener("click", function () {
     rightButton.style.display = "block"
 })
 
-gameRulesButton.addEventListener("click", function(){
-        gameContainer.classList.remove("supreme")
-        gameRules.style.display = "none"
-        leftButton.style.display = "block"
-        rightButton.style.display = "block"
-        timer()
+gameRulesButton.addEventListener("click", function () {
+    gameContainer.classList.remove("supreme")
+    gameRules.style.display = "none"
+    leftButton.style.display = "block"
+    rightButton.style.display = "block"
+    timer()
 })
 
-gameInstruction.addEventListener("click", function(){
-        gameRules.style.display = "flex";
-        gameContainer.classList.add("supreme")
-        leftButton.style.display = "none"
-        rightButton.style.display = "none"
+gameInstruction.addEventListener("click", function () {
+    gameRules.style.display = "flex";
+    gameContainer.classList.add("supreme")
+    leftButton.style.display = "none"
+    rightButton.style.display = "none"
     clearInterval(timerPlay)
+    timerIsOff = true
 })
 
-newGameBox.addEventListener("click", function(){
+newGameBox.addEventListener("click", function () {
     newGame()
 })
 
