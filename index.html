@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanoi Tower</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/af1e4530a8.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="game-container" class="game supreme">
+        <div class="user-settings">
+            <div>Gracz: <span class="user-name"></span></div>
+            <div id="user-data" class="user-data-icon"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+            <div id="setting" class="setting-icon"><i class="fa fa-cog" aria-hidden="true"></i> </div>
+        </div>
         <section class="header">
             <div>
                 <div class="moves">Liczb ruchów: <span id="moves-count"> 0</span></div>
@@ -32,6 +38,8 @@
             </div>
 
             <div class="game-time">Czas gry: <span id="timer">0:00</span> </div>
+
+
         </section>
 
         <div class="container">
@@ -42,7 +50,7 @@
 
         <div class="winner-box">
             <div class="winner-message">
-                <div class="winner-message-title">Gratulacje!!!</div>
+                <div class="winner-message-title">Gratulacje <span class="winner-meesage-user-name"></span> !!! </div>
                 <div class="winner-message-text">
                     Udało Ci się ułożyć wieżę hanoi w <span id="total-moves" class="total-moves"> 0 </span> ruchach.
                     <br />
@@ -53,23 +61,24 @@
             </div>
 
         </div>
+    </div>
 
-        <div id="left-button" class="left-button">
-            <div id="new-game-box" class="new-game-box">
-                <div>Nowa Gra</div>
-                <div class="new-game-bg">
-                    <div class="new-game-text">Nowa Gra</div>
-                </div>
+    <div id="left-button" class="left-button">
+        <div id="new-game-box" class="new-game-box">
+            <div>Nowa Gra</div>
+            <div class="new-game-bg">
+                <div class="new-game-text">Nowa Gra</div>
             </div>
         </div>
-        <div id="right-button" class="right-button">
-            <div id="instruction" class="instruction">
-                <div>Zasady</div>
-                <div class="instruction-bg">
-                    <div class="instruction-bg-text">Zasady</div>
-                </div>
+    </div>
+    <div id="right-button" class="right-button">
+        <div id="instruction" class="instruction">
+            <div>Zasady</div>
+            <div class="instruction-bg">
+                <div class="instruction-bg-text">Zasady</div>
             </div>
         </div>
+    </div>
 
     </div>
 
@@ -81,6 +90,54 @@
             </div>
         </div>
     </div>
+
+
+    <div class="user-game-stats">
+        <div class="wrapper">
+            <div class="top-nav">
+                <div class="user-game-title">Wyniki</div>
+                <div class="close-box"><i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="user-results">
+            <div class="user-result--list">
+                <!-- lista wyników generowana z LocalStorage -->
+
+                <!-- koniec listy -->
+            </div>
+            <div class="result-message">Musisz zagrać aby pojawiły się wyniki</div>
+        </div>
+    </div>
+
+    <div class="settings-box">
+
+        <div class="setting-box--title">Ustawienia</div>
+        <div class="close-settings"><i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+
+
+        <form action="" id="setting-form" class="settings">
+                <div class="input-box settings-input">
+                <input type="text" id="name" name="name" maxlength="13" required />
+                <label class="label">
+                  <span class="label-text">Zmień imię </span>
+                </label>
+              </div>
+              <div class="input-box settings-input">
+                <input type="email" id="email" name="email" required />
+                <label class="label">
+                  <span class="label-text">Zmień mail </span>
+                </label>
+              </div>
+            <input type="submit" value="Zapisz" class="settings-form-submit">
+        </form>
+
+
+    </div>
+
 
     <div id="game-rules" class="game-rules">
         <div class="game-rules-title">Zasady</div>
